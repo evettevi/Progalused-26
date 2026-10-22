@@ -1,5 +1,5 @@
-print ("Hello world!"
-print ("Ma õpin“ ,1, ". kursusel") #print väljastab info ekraanile
+print ("Hello world!")
+print ("Ma õpin“ ,1, ". kursusel") #print väljastab info ekraanile)
 
 
 
