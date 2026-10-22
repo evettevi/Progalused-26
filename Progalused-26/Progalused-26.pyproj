@@ -4,13 +4,16 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>1b8cf02c-29d7-472a-b173-fe9f451ecb54</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Progalused_26.py</StartupFile>
+    <StartupFile>too12.py</StartupFile>
     <SearchPath>
     </SearchPath>
-    <WorkingDirectory>.</WorkingDirectory>
+    <WorkingDirectory>
+    </WorkingDirectory>
     <OutputPath>.</OutputPath>
     <Name>Progalused-26</Name>
     <RootNamespace>Progalused-26</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
+    <PublishUrl>lklk</PublishUrl>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -23,6 +26,7 @@
   <ItemGroup>
     <Compile Include="module1.py" />
     <Compile Include="Progalused_26.py" />
+    <Compile Include="too12.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
