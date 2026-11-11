@@ -30,9 +30,13 @@ print(f"Laual on nüüd {kommide_arv} kommi.")
 
 
 from math import * #pi,sqrt()
+try:
+
 ümbermõõt=float(input("Sisesta puu ümbermõõt: ")) #teisendab strimgi ujukomaarvuks
 läbimõõt=ümbermõõt/pi
 print(f"Puu läbimõõt on {läbimõõt}.")
+except:
+    print("Sisesta mingi arv")
 
 
 
@@ -62,16 +66,50 @@ print(f"Täisosa on{täisosa}.")
 print(f"Jääk on {jääk}.")
 
 
-print("   @..@ ")
-print("  (----) ")
-print(" ( \__/ ) ")
-print(" ^^ "" ^^ ")
+
+print(" @..@ ")
+print("(----)")
+print("( \\__/ )")
+print("^^  \"\"  ^^")
+
 
 
 a=int(input("Sisesta 1. täisarv: "))
 b=int(input("Sisesta 2. täisarv: "))
 c=int(input("Sisesta 3. täisarv: "))
 P=a+b+c 
+print("Ristküliku ümbermõõt on:", P)
+
+hind = 12.90
+jootraha = 0.1
+kokku_kulub = hind*(1+jootraha)
+inimeste_arv = a
+a = int(input("Mitu inimest pitsat sõi?, (a)"))
+kulu_inimeste_kohta = kokku_kulu / inimeste_arv
+print("iga sõber maksab" , kulu_inimese_kohta)
 
 
 
+
+from datetime import *
+tana=date.today()
+print(f"Tere! Täna on{tana}")
+
+# 27/12/2022
+tana = tana.strftime("%d/%m/%Y")
+print(tana1)
+# December 27, 2022
+tana = tana.strftime("%B %d, %Y")
+print(tana2)
+# 12/27/22
+tana = tana.strftime("%m/%d/%y")
+print(tana3)
+# Dec-27-2022
+tana = tana.strftime("%b-%d-%Y")
+print(tana4)
+
+aasta=tana.year
+kuu=tana.month
+paev=tana.day
+print(f"Tänane aasta:{aasta}, kuu: {kuu}, päev:{paev}")
+kuulõpuni=date(aasta,kuu+1, 1) - tana
