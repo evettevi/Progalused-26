@@ -1,1 +1,25 @@
+from datetime import *
+tana=date.today()
+print(f"Tere! Täna on{tana}")
 
+# 27/12/2022
+tana = tana.strftime("%d/%m/%Y")
+print(tana1)
+# December 27, 2022
+tana = tana.strftime("%B %d, %Y")
+print(tana2)
+# 12/27/22
+tana = tana.strftime("%m/%d/%y")
+print(tana3)
+# Dec-27-2022
+tana = tana.strftime("%b-%d-%Y")
+print(tana4)
+
+aasta=tana.year
+kuu=tana.month
+paev=tana.day
+print(f"Tänane aasta:{aasta}, kuu: {kuu}, päev:{paev}")
+kuulõpuni=date(aasta,kuu+1, 1) - tana
+aastalõpuni=date(aasta+1, 1, 1) - tana
+print(f"Jäänud päevi kuu lõppuni: {kuulõpuni.days}")
+print(d"Jäänud päevi aasta lõpuni: {aastalõpuni.days}")
