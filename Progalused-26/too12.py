@@ -90,7 +90,7 @@ print("iga sõber maksab" , kulu_inimese_kohta)
 
 
 
-
+from import math
 from datetime import *
 tana=date.today()
 print(f"Tere! Täna on{tana}")
@@ -113,3 +113,31 @@ kuu=tana.month
 paev=tana.day
 print(f"Tänane aasta:{aasta}, kuu: {kuu}, päev:{paev}")
 kuulõpuni=date(aasta,kuu+1, 1) - tana
+aastalõpuni=date(aasta+1, 1, 1) - tana
+print(f"Jäänud päevi kuu lõppuni: {kuulõpuni.days}")
+print(f"Jäänud päevi aasta lõpuni: {aastalõpuni.days}")
+
+
+print("Tehe  3 + 8 / (4 - 2) * 4", 3 + 8 / (4 - 2) * 4)
+print["Tehe  3 + 8 / (4 - 2) * 4", 3 + 8 / (4 - 2) * 4]
+print{"Tehe  3 + 8 / (4 - 2) * 4", 3 + 8 / (4 - 2) * 4}
+
+
+try:
+     R=float(input("Sisesta ringi raadius R: "))
+     ruudu_pindala=(2*R)**2
+     ruudu_ymbermoot=4*(2*R)
+     ringi_pindala=pi*R**2
+     ringi-ymbermoot=2*pi*R
+     print(f"Ruudu pindala: {ruudu-pindala}, \nruudu ümbermõõt: {ruudu-ymbermoot}, \nringi pindala: {ringi-pindala}, \ringi ümbermõõt: {ringi-ymbermoot}")
+except ValueError:
+    print("Palun sisetsa kehtiv arv.")
+
+
+
+Maa_raadius=6378 # km
+Mundi_dia= # cm
+Mundi_raadius=Mundi_dia/2 # cm
+Maa_ymbermoot=2*pi*Maa_raadius*1000 # cm
+Mundi_arv=Maa_ymbermoot/Mundi_diaprint(f"2-euroseid münte on vaja: {Mundi_arv:.0f}")
+
