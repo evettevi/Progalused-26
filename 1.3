@@ -47,3 +47,54 @@ Mundi_dia= # cm
 Mundi_raadius=Mundi_dia/2 # cm
 Maa_ymbermoot=2*pi*Maa_raadius*1000 # cm
 Mundi_arv=Maa_ymbermoot/Mundi_diaprint(f"2-euroseid münte on vaja: {Mundi_arv:.0f}")
+
+
+
+
+
+
+
+
+
+
+try:
+    x=int(input("Sisestada arv: "))
+    if x == 1:
+        print("Õige")
+    else:
+        print("Vale")
+except ValueError:
+    print("Palun sisesta kehtiv täisarv.")
+
+
+    vastus = input("Kas soovid jätkata? (jah/ei) ")
+if vastus.lower() == "jah":
+    print("Jätkame!")
+else:
+    print("Head aega!")
+
+
+
+try: 
+    x = int(input("Sisesta arv -5 kuni 5: "))
+    if x < -5:
+        print("Vähe")
+    elif -5 <= x <= 5:
+        print("OK")
+    else:
+        print("Palju")
+except ValueError:
+    print("Palun sisesta täisarv.")
+
+#summa kontroll
+try:
+    summa = float(input("Sisesta summa: "))
+    if summa>2000:
+        hind=summa*0.8
+    elif summa>1000:
+        hind=summa*0,9
+    else:
+       hind=summa
+       print("Hind:", hind)
+except ValueError:
+    print("Palun sisesta täisarv.")
