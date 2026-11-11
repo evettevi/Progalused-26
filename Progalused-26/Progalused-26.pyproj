@@ -25,8 +25,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="module1.py" />
+    <Compile Include="module2.py" />
     <Compile Include="Progalused_26.py" />
     <Compile Include="too12.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="tinhlimustik operaator IF\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
