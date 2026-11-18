@@ -121,3 +121,119 @@ except ValueError:
 
 
 
+    try: 
+        pikkus = float(input("Sisesta inimese pikkus sentimeetrites: "))
+        if 30<=pikkus < 160:
+            print("Inimene on lühike.")
+        elif 160 <= pikkus <= 180:
+            print("Inimene on keskmise pikkusega.")
+        elif 180<pikkus<=220:
+            print("Inimene on pikk")
+        else:
+            print("Arv ei sobi")
+        except ValueError:
+            print("Viga: Palun sisesta pikkus numbrina.")
+
+
+try:
+    sugu =input("Sugu: ")
+    if sugu.isalpha():
+        if sugu.lower()=="m" or sugu.upper()=="MEES":
+            print("Mehe pikkuse analüüs")
+             
+            pikkus = float(input("Sisesta inimese pikkus sentimeetrites: "))
+        if 30<=pikkus < 170:
+            print("Inimene on lühike.")
+        elif 170 <= pikkus <= 180:
+            print("Inimene on keskmise pikkusega.")
+        elif 180<pikkus<=220:
+            print("Inimene on pikk")
+        else:
+            print("Arv ei sobi")
+        except ValueError:
+            print("Viga: Palun sisesta pikkus numbrina.")
+        else:
+            
+            print("Naise pikkuse analüüs")
+             
+            pikkus = float(input("Sisesta inimese pikkus sentimeetrites: "))
+        if 30<=pikkus < 160:
+            print("Inimene on lühike.")
+        elif 160 <= pikkus <= 180:
+            print("Inimene on keskmise pikkusega.")
+        elif 180<pikkus<=220:
+            print("Inimene on pikk")
+        else:
+            print("Arv ei sobi")
+        except ValueError:
+            print("Viga: Palun sisesta pikkus numbrina.")
+
+    else:
+        print("Viga: kirjuta tähtedega")
+
+
+from random import *
+summa=0
+arve="Toode     Kogus    Hind  Kokku\n"
+valik=input("Kas soovid osta piima? (Jah/ei)")
+if valik.lower()=="Jah": 
+    kogus=input(Mitu piima soovid osta (int): "
+    if kogus.isdigit():
+        kogus=int(kogus)
+        p_hind=round(unifrom(0.5,3.6),2)
+        print(f"piima hind on {p_hind}€")
+        summa+=round(kogus*p_hind,2)
+        print(f"piima kogusumma on {summa}€")
+        arve+=f"piim    {kogus}  {p_hind}€  {round(kogus*p_hind,2)}
+    else:
+    print("Viga:..") 
+else:
+    print("Selge: Piima ei taha")
+
+print("Arve Nr. 123456789")
+print(arve)
+
+
+
+summa=0
+arve="Toode     Kogus    Hind  Kokku\n"
+valik=input("Kas soovid osta muna? (Jah/ei)")
+if valik.lower()=="Jah": 
+    kogus=input(Mitu muna soovid osta (int): "
+    if kogus.isdigit():
+        kogus=int(kogus)
+        p_hind=round(unifrom(0.5,3.6),2)
+        print(f"muna hind on {p_hind}€")
+        summa+=round(kogus*p_hind,2)
+        print(f"muna  kogusumma on {summa}€")
+        arve+=f"muna  {kogus}  {p_hind}€  {round(kogus*p_hind,2)}
+    else:
+    print("Viga:..") 
+else:
+    print("Selge: Muna ei taha")
+
+print("Arve Nr. 123456789")
+print(arve)
+
+
+from random import *
+summa=0
+arve="Toode     Kogus    Hind  Kokku\n"
+valik=input("Kas soovid osta juustu? (Jah/ei)")
+if valik.lower()=="Jah": 
+    kogus=input(Mitu juustu soovid osta (int): "
+    if kogus.isdigit():
+        kogus=int(kogus)
+        p_hind=round(unifrom(0.5,3.6),2)
+        print(f"juustu hind on {p_hind}€")
+        summa+=round(kogus*p_hind,2)
+        print(f"juustu kogusumma on {summa}€")
+        arve+=f"juustu  {kogus}  {p_hind}€  {round(kogus*p_hind,2)}
+    else:
+    print("Viga:..") 
+else:
+    print("Selge: Juustu ei taha")
+
+print("Arve Nr. 123456789")
+print(arve)
+
