@@ -278,3 +278,4 @@ try:
             print("Viga: tundmatu tehtemärk")
 except ValueError:
     print("Viga: sisesta arvud")
+
