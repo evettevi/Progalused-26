@@ -1,148 +1,248 @@
+
 while True:
-    print("Vali :")
-    valik=input("Ülesannded 1-7, 0 - väljumiseks")
-    if valik=="1":
-        print("Valisid 1. Sisestatakse 15 arvu. Määra, mitu neist on täisarvud.")
+    print("\nVali ülesanne:")
+    valik = input("Ülesanded 1–7, 0 – väljumiseks: ")
+
+    if valik == "1":
+        print("Valisid 1.")
+        print("Sisestatakse 15 arvu. Määra, mitu neist on täisarvud.")
+
         for i in range(15):
             try:
-                arv = float(input(f"Sisesta{i+1}. arv: "))
+                arv = float(input(f"Sisesta {i + 1}. arv: "))
                 if arv.is_integer():
-                    print(f"{arv} on täisarv.")
+                    print(f"{arv:g} on täisarv.")
                 else:
-                    print(f"{arv} ei ole täisarv.")
+                    print(f"{arv:g} ei ole täisarv.")
             except ValueError:
-                print("Valesisend! Palun sisesta arv.")
-    elif valik=="2":
-        print("Valisid 2. Küsi kasutajalt arv A ja leia kõiginatuurarvude summa vahemikus 1 kuni A.")
-        summa = 0 #summa hoidmiseks
+                print("Vale sisend! Palun sisesta arv.")
+
+    elif valik == "2":
+        print("Valisid 2.")
+        print("Leia kõigi naturaalarvude summa vahemikus 1 kuni A.")
+
         while True:
             try:
-                A=int(input("Sisesta naturaalarv A: "))
-                if A< 1:
-                    print ("Vale sisend! Palun sisesta naturaalarv (A>= 1).")
-                    continue
+                A = int(input("Sisesta naturaalarv A: "))
+                if A < 1:
+                    print("Vale sisend! Palun sisesta naturaalarv (A >= 1).")
                 else:
                     break
-             except ValueError:
-                    print("Vale sisend! Palun sisesta täisarv.")
-         for i in range (1, A + 1):
-             summa += i
-        print(f"Kõigi naturaalarvude summa vahemikus 1 kuni {A} on: {summa}")
-    elif valik=="3":
-        print("Valisid 3. Sisestage 8 arvu. Leida nende korrutis (ainult positiivsete arvude puhul).")
-        korrutis = 1
-        for i in range (8):
-            try:
-                arv = float(input(f"Sisesta {i+1}. arv: "))
-                if arv > 0:
-                    korrutis *= arv
-                élse:
-                print(f"{arv} ei ole positiivne arv.")
-            except ValueError:
-                print("Vale sisend! Palun sisesta arv.")
-        print(f"Positiivsete arvude korrutis on: {korrutis}")
-    elif valik=="4":
-        print("Valisid 4. Koosta programm, mis väljastab ekraanile arvude ruudud vahemikus 10 kuni 20")
-        for i in rage(10, 21):
-            print(f"{i} ruut on: {i**2}")
-    elif valik=="5":
-        print("Valisid 5. Koosta programm, mis arvutab ainult negatiivsete arvude summa N sisestatud arvu seast. N väärtus sisestatakse klaviatuurilt.")
-        while True:
-            try:
-                N=int(input("Sisesta täisarv N: "))
-                break
             except ValueError:
                 print("Vale sisend! Palun sisesta täisarv.")
-        summa=0
-        for i in range(N):
+
+        summa = sum(range(1, A + 1))
+        print(
+            f"Kõigi naturaalarvude summa vahemikus "
+            f"1 kuni {A} on: {summa}"
+        )
+
+    elif valik == "3":
+        print("Valisid 3.")
+        print("Sisestage 8 arvu. Leida positiivsete arvude korrutis.")
+
+        korrutis = 1
+        positiivseid = 0
+
+        for i in range(8):
             try:
-                arv = float(input(f"Sisesta {i+1}. arv: "))
-                if arv < o:
-                    summa+= arv
+                arv = float(input(f"Sisesta {i + 1}. arv: "))
+                if arv > 0:
+                    korrutis *= arv
+                    positiivseid += 1
+                else:
+                    print(f"{arv:g} ei ole positiivne arv.")
             except ValueError:
                 print("Vale sisend! Palun sisesta arv.")
-        print(f"Negatiivsete arvude summa on: {summa}")
-    elif valik=="6":
-        print("Valisid 6")
-        print(""" 
-                  Klaviatuurilt sisestatakse N arvu.
-                  koosta programm, mis määrab sisestatud arvude seast:
-                  negatiivsete arvude arvu,
-                  positiivsete arvude arvu,
-                  nullide arvu.
-                  (N väärtus sisestatakse klaviatuurilt.)""")
+
+        if positiivseid == 0:
+            print("Positiivseid arve ei sisestatud.")
+        else:
+            print(f"Positiivsete arvude korrutis on: {korrutis:g}")
+
+    elif valik == "4":
+        print("Valisid 4.")
+        print("Arvude ruudud vahemikus 10 kuni 20:")
+
+        for i in range(10, 21):
+            print(f"{i} ruut on: {i ** 2}")
+
+    elif valik == "5":
+        print("Valisid 5.")
+        print("Arvuta negatiivsete arvude summa.")
+
+        while True:
+            try:
+                N = int(input("Sisesta täisarv N: "))
+                if N < 0:
+                    print("Arvude arv ei saa olla negatiivne.")
+                else:
+                    break
+            except ValueError:
+                print("Vale sisend! Palun sisesta täisarv.")
+
+        summa = 0
+
+        for i in range(N):
+            try:
+                arv = float(input(f"Sisesta {i + 1}. arv: "))
+                if arv < 0:
+                    summa += arv
+            except ValueError:
+                print("Vale sisend! Palun sisesta arv.")
+
+        print(f"Negatiivsete arvude summa on: {summa:g}")
+
+    elif valik == "6":
+        print("Valisid 6.")
+        print("""
+Klaviatuurilt sisestatakse N arvu.
+Leida, mitu arvu on negatiivsed, mitu positiivsed
+ning mitu neist võrdub nulliga.
+""")
+
+        while True:
+            try:
+                N = int(input("Sisesta täisarv N: "))
+                if N < 0:
+                    print("Arvude arv ei saa olla negatiivne.")
+                else:
+                    break
+            except ValueError:
+                print("Vale sisend! Palun sisesta täisarv.")
+
         negatiivsed = 0
         positiivsed = 0
         nullid = 0
+
         for i in range(N):
             try:
-                arv= föoat(input(f"isesta {i+1}. arv: "))
+                arv = float(input(f"Sisesta {i + 1}. arv: "))
                 if arv < 0:
                     negatiivsed += 1
                 elif arv > 0:
-                    positiivsed  += 1
+                    positiivsed += 1
                 else:
                     nullid += 1
             except ValueError:
                 print("Vale sisend! Palun sisesta arv.")
-        print("Vale sisend! Palun sisesta arv.")
+
         print(f"Negatiivsete arvude arv: {negatiivsed}")
         print(f"Positiivsete arvude arv: {positiivsed}")
         print(f"Nullide arv: {nullid}")
 
-    elif valik=="7"
-        print("Valisid 7.Väljasta ekraanile arvud, mis on K-ga jaguvad vahemikust[A, B].")
+    elif valik == "7":
+        print("Valisid 7.")
+        print("Kuva arvud vahemikus [A, B], mis jaguvad K-ga.")
+
         while True:
             try:
-                A=int(input("Sisesta täisarv A: "))
-                B=int(input("Sisesta täisarv B: "))
-                K=int(input("Sisesta täisarv K: "))
+                A = int(input("Sisesta täisarv A: "))
+                B = int(input("Sisesta täisarv B: "))
+                K = int(input("Sisesta täisarv K: "))
+
                 if A > B:
                     print("Vale sisend! A peab olema väiksem või võrdne B-ga.")
                     continue
+
                 if K == 0:
                     print("Vale sisend! K ei tohi olla 0.")
                     continue
+
                 break
             except ValueError:
                 print("Vale sisend! Palun sisesta täisarvud.")
+
+        leitud = False
+
         for i in range(A, B + 1):
             if i % K == 0:
                 print(f"{i} on {K}-ga jaguv.")
-    elif valik=="0":
-        print("Väljumine..")
+                leitud = True
+
+        if not leitud:
+            print(f"Vahemikus {A} kuni {B} puuduvad arvud, mis jaguvad {K}-ga.")
+
+    elif valik == "0":
+        print("Väljumine...")
         break
+
     else:
         print("Vale valik!")
 
-        #iseseisev töö
-
-#Koosta programm, mis prindib tollide ja sentimeetrite teisendustabeli(1 toll = 2,5 cm) väärtuste jaoks 1 kuni 20 tolli.
-
-# Prindime tabeli päise
+# Tunnitöö: tollide ja sentimeetrite teisendustabel
+print("\nTollide ja sentimeetrite teisendustabel")
 print(f"{'Tollid':<10} | {'Sentimeetrid':<15}")
 print("-" * 27)
 
-# Tsükkel väärtustele 1 kuni 20 (range lõppväärtus on välistav, seega 21)
 for tollid in range(1, 21):
     sentimeetrid = tollid * 2.5
-    # Vormindame väljundi nii, et veerud oleksid üksteise all kohakuti
     print(f"{tollid:<10} | {sentimeetrid:<15.1f}")
-    
 
-    # Kordame tegevust 10 korda (i võtab väärtused 1 kuni 10)
+# Tunnitöö: suurima arvupaari leidmine
 for i in range(1, 11):
-    print(f"--- {i}. arvupaar ---")
-    
-    # Küsime kaks arvu ja teisendame need ujukomaarvudeks (et sobiksid ka komakohaga arvud)
-    arv1 = float(input("Sisesta esimene arv: "))
-    arv2 = float(input("Sisesta teine arv: "))
-    
-    # Võrdleme arve ja väljastame suurema
+    print(f"\n--- {i}. arvupaar ---")
+
+    while True:
+        try:
+            arv1 = float(input("Sisesta esimene arv: "))
+            arv2 = float(input("Sisesta teine arv: "))
+            break
+        except ValueError:
+            print("Vale sisend! Palun sisesta arv.")
+
     if arv1 > arv2:
-        print(f"Suurem arv on: {arv1}\n")
+        print(f"Suurem arv on: {arv1:g}")
     elif arv2 > arv1:
-        print(f"Suurem arv on: {arv2}\n")
+        print(f"Suurem arv on: {arv2:g}")
     else:
-        print(f"Arvud on võrdsed ({arv1})\n")
-       
+        print(f"Arvud on võrdsed ({arv1:g})")
+    import random
+    
+    k = random.randint(1, 100)
+    arvud = [n for n in range(11, 100, 2) if n % k == 0]
+    
+    korrutis = 1
+    for n in arvud:
+        korrutis *= n
+    
+    print("Genereeritud arv:", k)
+    print("Sobivad arvud:", arvud)
+    print("Korrutis:", korrutis)
+
+
+
+# Küsime kasutajalt algandmed
+N = int(input("Sisesta niidukite arv (N): "))
+m = float(input("Sisesta esimese niiduki töötunnid (m): "))
+
+kogu_aeg = 0            # Siia liidame kõigi niidukite tunnid kokku
+niiduki_aeg = m         # Esimese niiduki aeg on m tundi
+lisa_aeg = 10 / 60      # Teisendame 10 minutit tundideks (10 / 60 = 0.1667 tundi)
+
+# Tsükkel käib läbi iga niiduki (kokku N korda)
+for i in range(N):
+    kogu_aeg += niiduki_aeg      # Lisame praeguse niiduki tööaja üldsummale
+    niiduki_aeg += lisa_aeg      # Järgmine niiduk töötab 10 minutit (1/6 tundi) kauem
+
+# Väljastame tulemuse (ümardame 2 komakohani, et oleks ilusam lugeda)
+print(f"Kogu brigaad töötas kokku {kogu_aeg:.2f} tundi.")
+
+
+
+kogus = 0   # Loendur, mis loeb kokku, mitu sobivat arvu leidsime
+summa = 0   # Muutuja, kuhu liidame kõik leitud arvud kokku
+
+# Vaatame läbi kõik arvud 100-st kuni 1000-ni (lõppväärtus on 1001, et 1000 jääks sisse)
+for arv in range(100, 1001):
+    
+    # Kontrollime jäägiga jagamist (%). Kui jääk on 0, siis arv jagub 7-ga
+    if arv % 7 == 0:
+        print(arv, end=" ")   # Prindime arvu ekraanile (end=" " hoiab arvud ühel real)
+        kogus += 1            # Suurendame leitud arvude loendurit ühe võrra
+        summa += arv          # Liidame leitud arvu üldsummale juurde
+
+# Prindime kokkuvõtte
+print() # Teeb tühja rea vahele
+print(f"7-ga jaguvaid arve on kokku: {kogus}")
+print(f"Nende arvude summa on: {summa}")
