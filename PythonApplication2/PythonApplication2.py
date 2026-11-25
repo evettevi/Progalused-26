@@ -1,40 +1,43 @@
 
+print("Aastaaeg") # Eelmises oli tekst Ã¼lakomade/jutumÃ¤rkidega poolik (puudus lÃµpumÃ¤rk)
+kuu = int(input("Sisesta kuu number (1-12) => "))
 
-
-
-print("Aastaaeg") # ma ei tea kas see loeab aga seal juttumärkides oli ainult 1 juttumärgi kriips
-kuu=int(input("Sisesta kuu number (1-12) => "))
-if kuu<1 and kuu>12:
+if kuu < 1 or kuu > 12: # Eelmises oli 'and', aga arv ei saa olla korraga alla 1 JA Ã¼le 12, peab olema 'or' (vÃµi)
     print("Vigane kuu")
-elif kuu=12 or kuu<=2:
+elif kuu == 12 or kuu <= 2: # Eelmises oli Ã¼ks '=', vÃµrdlemiseks on vaja kahte '=='
     print("Talv")
-else if 3>=kuu<=5:  #ennem oli < aga see on väiksem kui, siis saaks panna 1,2 mis on talve kuud mitte kevad.
+elif 3 <= kuu <= 5: # Eelmises oli 'else if' (peab olema 'elif') ja valepidi mÃ¤rk '>=' (peab olema '<=')
     print("Kevad")
-elif 6>=kuu<=8    #siin sama asi mis eelmises paranduses
-print("Suvi")
+elif 6 <= kuu <= 8: # Eelmises oli mÃ¤rk valepidi ('>=') ja rea lÃµpust puudus koolon ':'
+    print("Suvi")
 else:
-    print("Sügis")
+    print("SÃ¼gis")
+
 print()
 print("Kiiruse kontroll")
-lubatud=int(input("Sisesta lubatud kiirus (km/h) => "))  #siin oli ainult üks sulg, aga pidi olema 2
-kiirus=int(input("Sisesta tegelik kiirus (km/h) => "))   #seal ka peaks olema ju int, sest vasutus ilmselt tuleb täisarv ja ka on vaja kahte sukgu ja oli ainult 1
-Ületus=kiirus-lubatud  #ma ei tea kui suur viga on panna Ü asemel y
-if Ületus=<0:          #sama siin
-    print("Kiirust ei ületatud")
-elif ületus>0:         # siin ka
-    print("Hoiatus")
-elif ületus>20:        #siin ka
+lubatud = int(input("Sisesta lubatud kiirus (km/h) => ")) # Eelmises puudus lÃµpust Ã¼ks sulg ')'
+kiirus = int(input("Sisesta tegelik kiirus (km/h) => ")) # Eelmises puudus 'int(' ja lÃµpust teine sulg ')'
+yletus = kiirus - lubatud # Eelmises oli suure tÃ¤hega 'Ãœletus', aga allpool vÃ¤ikese tÃ¤hega 'Ã¼letus' (Python teeb neil vahet)
+
+if yletus <= 0: # Eelmises oli mÃ¤rk valepidi '=<', Ãµige on '<='
+    print("Kiirust ei Ã¼letatud")
+elif yletus > 40: # TÃµstsin selle ettepoole, sest muidu jÃ¤Ã¤bprogramm '> 0' juurde pidama ega jÃµua kunagi trahvi ega lubadeni
+    print("Juhiluba vÃµetakse Ã¤ra")
+elif yletus > 20: # TÃµstsin selle ettepoole samal pÃµhjusel (suuremad arvud kontrollitakse enne)
     print("Trahv")
-elif ületus>40:        #siin samuti
-    print("Juhiluba võetakse ära")
+elif yletus > 0: # TÃµstsin selle viimaseks, muidu pÃ¼Ã¼ab see kÃµik Ã¼letused kinni ja annab alati ainult hoiatuse
+    print("Hoiatus")
+
 print()
-print("Taksosõit")
-km=float(input("Sisesta sõidu pikkus (km) => "))
-oo=input("Kas sõit on öösel (jah/ei)? => ")
-hind=3+km+0.8
-if oo=="jah" and oo=="JAH":  #peaks olema koolon, aga puudus
-    hind=hind*1.2
-print("Sõidu hind:", round(hind,2)), "€"  #siin ka vaja kahte sulgu, aga oli ainult 1
+print("TaksosÃµit")
+km = float(input("Sisesta sÃµidu pikkus (km) => "))
+oo = input("Kas sÃµit on Ã¶Ã¶sel (jah/ei)? => ")
+hind = 3 + km * 0.8 # Eelmises oli 'km + 0.8', aga kilomeetrid tuleb hinnaga korrutada 'km * 0.8'
+
+if oo == "jah" or oo == "JAH": # Eelmises oli 'and' (sÃµna ei saa olla korraga vÃ¤ike ja suur) ning puudus koolon ':'
+    hind = hind * 1.2
+
+print("SÃµidu hind:", round(hind, 2), "â‚¬") # Eelmises oli '"â‚¬"' jÃ¤Ã¤nud print-kÃ¤su s
      
      
       #Programmi tulemus:
@@ -49,60 +52,101 @@ print("Sõidu hind:", round(hind,2)), "€"  #siin ka vaja kahte sulgu, aga oli ain
 #Sisesta tegelik kiirus (km/h) => 75
 #Trahv
 
-#Taksosõit
-#Sisesta sõidu pikkus (km) => 10
-#Kas sõit on öösel (jah/ei)? => jah
-#Sõidu hind: 13.2 €
+#TaksosÃµit
+#Sisesta sÃµidu pikkus (km) => 10
+#Kas sÃµit on Ã¶Ã¶sel (jah/ei)? => jah
+#SÃµidu hind: 13.2 â‚¬
 
 
 
 
 
 
-#Muuda programmi nii, et alguses kuvatakse menüü ja kasutaja valib, millist osa käivitada:
+#Muuda programmi nii, et alguses kuvatakse menÃ¼Ã¼ ja kasutaja valib, millist osa kÃ¤ivitada:
  
 #Vali programm:
 #1 - Aastaaeg
 #2 - Kiiruse kontroll
-#3 - Taksosõit
+#3 - TaksosÃµit
 #Sisesta valik (1-3) =>
-#Käivitub ainult valitud osa. Kui kasutaja sisestab midagi muud kui 1, 2 või 3, kuvatakse teade Vigane valik.
+#KÃ¤ivitub ainult valitud osa. Kui kasutaja sisestab midagi muud kui 1, 2 vÃµi 3, kuvatakse teade Vigane valik.
 
-#Lisa taksosõidu osasse allahindlus: kui sõit on pikem kui 50 km, väheneb hind 10%.
+#Lisa taksosÃµidu osasse allahindlus: kui sÃµit on pikem kui 50 km, vÃ¤heneb hind 10%.
 #Kiiruse kontrolli osa ei tohi lubada sisestada negatiivset kiirust.
-#Lisaülesande tulemus (näide):
+#LisaÃ¼lesande tulemus (nÃ¤ide):
 
  
 #Vali programm:
 #1 - Aastaaeg
 #2 - Kiiruse kontroll
-#3 - Taksosõit
+#3 - TaksosÃµit
 #Sisesta valik (1-3) => 3
-#Taksosõit
-#Sisesta sõidu pikkus (km) => 60
-#Kas sõit on öösel (jah/ei)? => ei
-#Pika sõidu allahindlus 10%
-#Sõidu hind: 45.9 €
+#TaksosÃµit
+#Sisesta sÃµidu pikkus (km) => 60
+#Kas sÃµit on Ã¶Ã¶sel (jah/ei)? => ei
+#Pika sÃµidu allahindlus 10%
+#SÃµidu hind: 45.9 â‚¬
 
-from math import *
-try: 
-    programmivalikud =print("1 - Aastaaeg","2 - Kiiruse kontroll","3 - Taksosõit")
-    valikud=int(input("Sisesta number 1 kuni 3: "))
-    if valik <1 and >3:   # ei olnud koolonit, aga peaks olema ju
-        print("Ei ole sobiv arv.")
+print("Vali programm:")
+print("1 - Aastaaeg")
+print("2 - Kiiruse kontroll")
+print("3 - TaksosÃµit")
+
+try:
+    valik = int(input("Sisesta valik (1-3) => "))
+
+    if valik == 1:
+        print("\nAastaaeg")
+        kuu = int(input("Sisesta kuu number (1-12) => "))
+        if kuu < 1 or kuu > 12:
+            print("Vigane kuu")
+        elif kuu == 12 or kuu <= 2:
+            print("Talv")
+        elif 3 <= kuu <= 5:
+            print("Kevad")
+        elif 6 <= kuu <= 8:
+            print("Suvi")
+        else:
+            print("SÃ¼gis")
+
+    elif valik == 2:
+        print("\nKiiruse kontroll")
+        lubatud = int(input("Sisesta lubatud kiirus (km/h) => "))
+        kiirus = int(input("Sisesta tegelik kiirus (km/h) => "))
+
+        if lubatud < 0 or kiirus < 0:
+            print("Kiirus ei saa olla negatiivne!")
+        else:
+            uletus = kiirus - lubatud
+            if uletus <= 0:
+                print("Kiirust ei Ã¼letatud")
+            elif uletus <= 20:
+                print("Hoiatus")
+            elif uletus <= 40:
+                print("Trahv")
+            else:
+                print("Juhiluba vÃµetakse Ã¤ra")
+
+    elif valik == 3:
+        print("\nTaksosÃµit")
+        km = float(input("Sisesta sÃµidu pikkus (km) => "))
+        oo = input("Kas sÃµit on Ã¶Ã¶sel (jah/ei)? => ")
+
+        # Alustustasu 3 â‚¬ + 0.8 â‚¬ iga kilomeetri kohta
+        hind = 3 + km * 0.8
+
+        if oo.lower() == "jah":
+            hind = hind * 1.2
+
+        if km > 50:
+            print("Pika sÃµidu allahindlus 10%")
+            hind = hind * 0.9
+
+        print("SÃµidu hind:", round(hind, 2), "â‚¬")
+
     else:
-        print("Sobiv arv sisestatud.")
+        print("Vigane valik")
+
 except ValueError:
-    print("vigane valik.")
-    
-    print("Valisite taksosõit!")
-    
-    print("Taksosõit")
-km=float(input("Sisesta sõidu pikkus (km) => "))
-oo=input("Kas sõit on öösel (jah/ei)? => ")
-hind=3+km+0.8
-if oo=="jah" and oo=="JAH":    #peaks olema koolon ju, aga polnud
-    hind=hind*1.2
-  10%/hinnast
-print("Sõidu hind:", round(hind,2)), "€"  #puudub koolon, enne oli ainult 1
+    print("Vigane valik")
      
