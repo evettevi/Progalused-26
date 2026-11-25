@@ -239,3 +239,41 @@ except ValueError:
         print("Toatemperatuur on alla 18 kraadi. Tuba on jahe.")
 except ValueError:
     print("Viga! Palun sisesta temperatuur numbrilisel kujul (nt 21.5 või -2).")
+    while True:
+    print("Vali tsükkel: ")
+    print("1. while tingimusega")
+    print("2. while True ja break")
+    print("3.for-tsükkel")
+    print("4. Välju")
+    valik=input("Sisesta valik (1-4):")
+
+    if valik=="1":
+
+        #while tingimusega
+        print("Paaritud arvud kuni 30. Kasutame while tingimusega")
+        x = 0
+        while x < 30:
+            if x % 2==1:
+                print(x, end= " ")
+            x+= 1
+    elif valik=="2":
+        #while True ja break
+        print("\nPaaritud arvud kuni 30. Kasutame while True ja break")
+        x = 0
+        while True:
+            if x % 2==1:
+                print(x, end= " ")
+            x+= 1
+            if x>= 30:
+                break
+    elif valik=="3":
+        #for-tsükkel
+        print("\nPaaritud arvud kuni 30. Kasutame for-Tsüklit")
+        for x in range(30):    #range(0,30,1) annab vahemiku 0,1,2,...,29
+                 if x % 2==1:
+                    print(x, end= " ")
+    elif valik=="4":
+        print("Väljun")
+        break
+    else:
+        print("Viga: valik peab olema 1-4")
